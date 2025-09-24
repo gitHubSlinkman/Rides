@@ -18,7 +18,7 @@ compute_parametrics <-
     
     ybar               <- mean( y, na.rm=TRUE )
     stdy               <- sd( y, na.rm=TRUE )
-    seybar     <- stdy / sqrt( sample_size )
+    seybar     <- stdy / sqrt( n )
     lcl95      <- ybar - 2 * seybar
     ucl95      <- ybar + 2 * seybar
     
