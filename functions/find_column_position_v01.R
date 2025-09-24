@@ -8,7 +8,7 @@
 #' @param data      - a data frame ot tibble.
 #' @param variable  - a quoted string that is the name of a variable.
 #'
-#' @return an integer column posirion
+#' @return an integer column position
 #' @export
 #'
 #' @examples
