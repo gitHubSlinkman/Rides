@@ -26,13 +26,16 @@ find_column_position <-
     vnames <- names( data )
     
     #######################################################################
-    # Find position columsn position.  If it does not match throw an error.
+    # Find column position.  If it does not match throw an error.
     #######################################################################
     
     position <-
-      match( string_variable, 
-             vnames,
-             nomatch = 0 )
+      match(  vnames,
+              string_variable )
+    
+    position <-
+      str_locate( vnames,
+                  string_variable )
     
     if( position  == 0)
       stop(  paste( "Column position for variable",

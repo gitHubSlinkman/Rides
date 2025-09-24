@@ -22,6 +22,13 @@ compute_parametrics <-
     lcl95      <- ybar - 2 * seybar
     ucl95      <- ybar + 2 * seybar
     
+    description <- 
+      capitalize_first( description )
+    description <-
+      str_replace( description,
+                   "_", 
+                   " ")
+    
     tibble( description,
             rides,
             missing_values, 

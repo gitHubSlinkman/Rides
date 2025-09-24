@@ -7,7 +7,7 @@ source("D:/R-Projects/Rides/functions/wrangle_rides.R")
 source("D:/R-Projects/Rides/functions/summarise_all.R")
 
 activities <-
-  vroom( "data/2025-09-13.csv" )
+  vroom( "data/2025-09-24.csv" )
 spec( activities )
 
 rides <- 
