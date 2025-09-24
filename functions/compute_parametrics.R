@@ -9,16 +9,27 @@ compute_parametrics <-
    
     rides          <- length( y )
     missing_values <- sum( is.na( y ))
-    sample_size    <- rides - missing_values
+    n              <- rides - missing_values
     
     if( total ){
-      total <- sum( y, na.rm = TRUE )
+      sumy <- sum( y, na.rm= TRUE )
     } else{ 
-      total <- NA }
+      sumy <- NA }
+    
+    ybar               <- mean( y, na.rm=TRUE )
+    stdy               <- sd( y, na.rm=TRUE )
+    seybar     <- stdy / sqrt( sample_size )
+    lcl95      <- ybar - 2 * seybar
+    ucl95      <- ybar + 2 * seybar
     
     tibble( description,
             rides,
             missing_values, 
-            sample_size,
-            total )
+            n,
+            sumy,
+            ybar,
+            stdy,
+            seybar,
+            lcl95,
+            ucl95 )
   }
